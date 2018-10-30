@@ -14,7 +14,6 @@ import java.util.ArrayList;
 public class NewsAdapter extends ArrayAdapter<News> {
 
     private static final String DATE_SEPERATOR = "T";
-    private static final String Date_Seperator = "Z";
 
     NewsAdapter(Context context, ArrayList<News> news){super(context,0,news);}
 

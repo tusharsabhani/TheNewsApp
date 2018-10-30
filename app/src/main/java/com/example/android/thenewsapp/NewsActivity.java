@@ -22,7 +22,7 @@ import java.util.List;
 
 public class NewsActivity extends AppCompatActivity implements LoaderManager.LoaderCallbacks<List<News>> {
 
-    private static final String GUARDIAN_URL= "https://content.guardianapis.com/search?api-key=dd366f11-5b3f-427f-bce8-8ffe8eb51342";
+    private static final String GUARDIAN_URL = "https://content.guardianapis.com/search?api-key=dd366f11-5b3f-427f-bce8-8ffe8eb51342";
     private static final int NEWS_LOADER_ID = 1;
     private TextView mEmptyStateTextView;
     private NewsAdapter mAdapter;
@@ -52,7 +52,7 @@ public class NewsActivity extends AppCompatActivity implements LoaderManager.Loa
             mEmptyStateTextView.setText(R.string.no_internet_connection);
         }
 
-        mEmptyStateTextView = (TextView) findViewById(R.id.empty_view);
+        mEmptyStateTextView = findViewById(R.id.empty_view);
         newsListView.setEmptyView(mEmptyStateTextView);
 
         newsListView.setAdapter(mAdapter);
@@ -60,13 +60,12 @@ public class NewsActivity extends AppCompatActivity implements LoaderManager.Loa
         newsListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
-                // Find the current earthquake that was clicked on
+               
                 News currentNews = mAdapter.getItem(position);
 
                 // Convert the String URL into a URI object (to pass into the Intent constructor)
                 Uri newsUri = Uri.parse(currentNews.getmUrl());
 
-                // Create a new intent to view the earthquake URI
                 Intent websiteIntent = new Intent(Intent.ACTION_VIEW, newsUri);
 
                 // Send the intent to launch a new activity
@@ -77,7 +76,7 @@ public class NewsActivity extends AppCompatActivity implements LoaderManager.Loa
 
     @Override
     public Loader<List<News>> onCreateLoader(int i, Bundle bundle) {
-        return new NewsLoader(this,GUARDIAN_URL);
+        return new NewsLoader(NewsActivity.this,GUARDIAN_URL);
     }
 
     @Override
