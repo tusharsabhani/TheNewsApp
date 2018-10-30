@@ -1,30 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="?android:attr/listPreferredItemHeight"
+    android:layout_height="@dimen/eightyD"
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="horizontal"
-    android:paddingEnd="16dp"
-    android:paddingLeft="16dp"
-    android:paddingRight="16dp"
-    android:paddingStart="16dp">
+    android:paddingEnd="@dimen/sixteenD"
+    android:paddingLeft="@dimen/sixteenD"
+    android:paddingRight="@dimen/sixteenD"
+    android:paddingStart="@dimen/sixteenD">
 
     <LinearLayout
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center_vertical"
-        android:layout_marginLeft="16dp"
-        android:layout_marginStart="16dp"
+        android:layout_marginLeft="@dimen/tenD"
+        android:layout_marginStart="@dimen/tenD"
         android:layout_weight="1"
         android:orientation="vertical">
 
         <TextView
             android:id="@+id/headline"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/fourFiveD"
             android:ellipsize="end"
             android:maxLines="2"
-            android:textSize="16sp"
+            android:textColor="#B4BAC0"
+            android:textSize="@dimen/sixteenS"
             tools:text="HEADLINE" />
 
         <TextView
@@ -34,8 +35,10 @@
             android:ellipsize="end"
             android:fontFamily="sans-serif-medium"
             android:maxLines="1"
+            android:textStyle="bold"
             android:textAllCaps="true"
-            android:textSize="12sp"
+            android:textSize="@dimen/twelveS"
+            android:layout_gravity="bottom"
             tools:text="category" />
 
     </LinearLayout>
@@ -44,8 +47,8 @@
             android:id="@+id/date"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:textSize="12sp"
+            android:layout_gravity="bottom"
+            android:textSize="@dimen/twelveS"
             tools:text="Mar 6, 2010" />
 
 </LinearLayout>
