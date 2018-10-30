@@ -1,6 +1,6 @@
 package com.example.android.thenewsapp;
 import android.content.Context;
-import android.support.v4.content.AsyncTaskLoader;
+import android.content.AsyncTaskLoader;
 import java.util.List;
 
 public class NewsLoader extends AsyncTaskLoader<List<News>> {

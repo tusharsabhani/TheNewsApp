@@ -60,7 +60,7 @@ public class NewsActivity extends AppCompatActivity implements LoaderManager.Loa
         newsListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
-               
+
                 News currentNews = mAdapter.getItem(position);
 
                 // Convert the String URL into a URI object (to pass into the Intent constructor)
@@ -76,7 +76,7 @@ public class NewsActivity extends AppCompatActivity implements LoaderManager.Loa
 
     @Override
     public Loader<List<News>> onCreateLoader(int i, Bundle bundle) {
-        return new NewsLoader(NewsActivity.this,GUARDIAN_URL);
+        return new NewsLoader(this,GUARDIAN_URL);
     }
 
     @Override

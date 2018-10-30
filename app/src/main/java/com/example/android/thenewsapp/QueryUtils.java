@@ -106,17 +106,17 @@ public final class QueryUtils {
         try {
             // Create a JSONObject from the JSON response string
             JSONObject baseJsonResponse = new JSONObject(newsJSON);
-            JSONArray newsArray = baseJsonResponse.getJSONArray("response");
+            JSONObject response = baseJsonResponse.getJSONObject("response");
+            JSONArray results = response.getJSONArray("results");
 
-            for (int i = 0; i < newsArray.length(); i++) {
+            for (int i = 0; i < results.length(); i++) {
 
-                JSONObject currentNews = newsArray.getJSONObject(i);
-                JSONObject results = currentNews.getJSONObject("results");
+                JSONObject currentNews = results.getJSONObject(i);
 
-                String title = results.getString("webTitle");
-                String category = results.getString("sectionName");
-                String url = results.getString("webUrl");
-                String date = results.getString("webPublicationDate");
+                String title = currentNews.getString("webTitle");
+                String category = currentNews.getString("sectionName");
+                String url = currentNews.getString("webUrl");
+                String date = currentNews.getString("webPublicationDate");
 
                 News newss = new News(title, category, date, url);
 
