@@ -120,7 +120,7 @@ public final class QueryUtils {
 
                 JSONArray tags = currentNews.getJSONArray("tags");
                 JSONObject currenttag = tags.getJSONObject(0);
-                String author = currenttag.optString("webTitle");
+                String author = "By " + currenttag.optString("webTitle");
 
 
                 News newss = new News(title, category, date, url,author);
