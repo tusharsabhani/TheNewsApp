@@ -118,7 +118,12 @@ public final class QueryUtils {
                 String url = currentNews.getString("webUrl");
                 String date = currentNews.getString("webPublicationDate");
 
-                News newss = new News(title, category, date, url);
+                JSONArray tags = currentNews.getJSONArray("tags");
+                JSONObject currenttag = tags.getJSONObject(0);
+                String author = currenttag.optString("webTitle");
+
+
+                News newss = new News(title, category, date, url,author);
 
                 // Add the new {@link Earthquake} to the list of earthquakes.
                 news.add(newss);

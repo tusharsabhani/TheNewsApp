@@ -27,19 +27,35 @@
             android:textColor="#B4BAC0"
             android:textSize="@dimen/sixteenS"
             tools:text="HEADLINE" />
-
-        <TextView
-            android:id="@+id/category"
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:ellipsize="end"
-            android:fontFamily="sans-serif-medium"
-            android:maxLines="1"
-            android:textStyle="bold"
-            android:textAllCaps="true"
-            android:textSize="@dimen/twelveS"
-            android:layout_gravity="bottom"
-            tools:text="category" />
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/category"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:fontFamily="sans-serif-medium"
+                android:maxLines="1"
+                android:textStyle="bold"
+                android:textAllCaps="true"
+                android:textSize="@dimen/twelveS"
+                android:layout_gravity="bottom"
+                tools:text="category" />
+
+            <TextView
+                android:id="@+id/author"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="AUTHOR"
+                android:layout_marginLeft="@dimen/eightyD"
+                android:layout_marginStart="@dimen/eightyD"
+                android:textSize="@dimen/twelveS"/>
+
+        </LinearLayout>
+
 
     </LinearLayout>
 
