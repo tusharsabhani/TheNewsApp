@@ -38,6 +38,7 @@ public class NewsActivity extends AppCompatActivity implements LoaderManager.Loa
         ConnectivityManager connMgr = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
 
         NetworkInfo networkInfo = connMgr.getActiveNetworkInfo();
+        mEmptyStateTextView = findViewById(R.id.empty_view);
 
         if (networkInfo != null && networkInfo.isConnected()) {
 
@@ -52,7 +53,7 @@ public class NewsActivity extends AppCompatActivity implements LoaderManager.Loa
             mEmptyStateTextView.setText(R.string.no_internet_connection);
         }
 
-        mEmptyStateTextView = findViewById(R.id.empty_view);
+
         newsListView.setEmptyView(mEmptyStateTextView);
 
         newsListView.setAdapter(mAdapter);
