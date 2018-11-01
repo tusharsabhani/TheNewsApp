@@ -53,7 +53,6 @@ public class NewsActivity extends AppCompatActivity implements LoaderManager.Loa
             mEmptyStateTextView.setText(R.string.no_internet_connection);
         }
 
-
         newsListView.setEmptyView(mEmptyStateTextView);
 
         newsListView.setAdapter(mAdapter);
