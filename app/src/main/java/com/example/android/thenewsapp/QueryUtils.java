@@ -119,8 +119,13 @@ public final class QueryUtils {
                 String date = currentNews.getString("webPublicationDate");
 
                 JSONArray tags = currentNews.getJSONArray("tags");
-                JSONObject currenttag = tags.getJSONObject(0);
-                String author = "By " + currenttag.optString("webTitle");
+                String author = null;
+                try{
+                    JSONObject currenttag = tags.getJSONObject(0);
+                    author = "By " + currenttag.optString("webTitle");
+                }catch(JSONException e){
+                    Log.e(LOG_TAG,"tags not available");
+                }
 
 
                 News newss = new News(title, category, date, url,author);

@@ -2,11 +2,11 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
 
     <EditTextPreference
-        android:defaultValue="@string/settings_no_of_news"
+        android:defaultValue="@string/settings_no_of_news_default"
         android:inputType="number"
         android:key="@string/settings_no_of_news_key"
         android:selectAllOnFocus="true"
-        android:title="@string/no_of_new" />
+        android:title="@string/settings_no_of_news_label" />
 
     <SwitchPreference
         android:title="Show author name"

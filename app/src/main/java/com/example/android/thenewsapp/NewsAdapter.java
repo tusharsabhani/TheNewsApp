@@ -53,7 +53,6 @@ public class NewsAdapter extends ArrayAdapter<News> {
         categoryView.setText(news.getmCategory());
 
         TextView authorView = listItemView.findViewById(R.id.author);
-        authorView.setText(news.getmAuthor());
 
         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(mContext);
         boolean showAuthorName = sharedPreferences.getBoolean(
@@ -63,6 +62,7 @@ public class NewsAdapter extends ArrayAdapter<News> {
 
         if(showAuthorName){
             authorView.setVisibility(View.VISIBLE);
+            authorView.setText(news.getmAuthor());
         }else{
             authorView.setVisibility(View.GONE);
         }
