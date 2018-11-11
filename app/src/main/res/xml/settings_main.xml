@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <EditTextPreference
+        android:defaultValue="@string/settings_no_of_news"
+        android:inputType="number"
+        android:key="@string/settings_no_of_news_key"
+        android:selectAllOnFocus="true"
+        android:title="@string/no_of_new" />
+</PreferenceScreen>
