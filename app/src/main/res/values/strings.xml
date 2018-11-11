@@ -13,4 +13,8 @@
     <string name="settings_no_of_news_default" translatable="false">@string/settings_order_by_no_of_news</string>
 
     <string name="settings_order_by_no_of_news">10</string>
+
+    <string name="author_name_key">author_name</string>
+    <string name="default_author_value">true</string>
+    <string name="show_author_name">Show author name</string>
 </resources>

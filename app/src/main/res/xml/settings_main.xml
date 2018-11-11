@@ -7,4 +7,10 @@
         android:key="@string/settings_no_of_news_key"
         android:selectAllOnFocus="true"
         android:title="@string/no_of_new" />
+
+    <SwitchPreference
+        android:title="Show author name"
+        android:key="@string/author_name_key"
+        android:defaultValue="@string/default_author_value"
+        android:summary="@string/show_author_name"/>
 </PreferenceScreen>

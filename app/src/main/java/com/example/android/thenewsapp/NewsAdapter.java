@@ -1,6 +1,9 @@
 package com.example.android.thenewsapp;
 
+import android.content.ContentProvider;
 import android.content.Context;
+import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
@@ -8,16 +11,15 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
-
-import org.w3c.dom.Text;
-
 import java.util.ArrayList;
 
 public class NewsAdapter extends ArrayAdapter<News> {
 
     private static final String DATE_SEPERATOR = "T";
+    private Context mContext;
 
-    NewsAdapter(Context context, ArrayList<News> news){super(context,0,news);}
+    NewsAdapter(Context context, ArrayList<News> news){super(context,0,news);
+    mContext = context;}
 
     @NonNull
     @Override
@@ -52,6 +54,18 @@ public class NewsAdapter extends ArrayAdapter<News> {
 
         TextView authorView = listItemView.findViewById(R.id.author);
         authorView.setText(news.getmAuthor());
+
+        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(mContext);
+        boolean showAuthorName = sharedPreferences.getBoolean(
+                mContext.getString(R.string.author_name_key),
+                Boolean.parseBoolean(mContext.getString(R.string.default_author_value))
+        );
+
+        if(showAuthorName){
+            authorView.setVisibility(View.VISIBLE);
+        }else{
+            authorView.setVisibility(View.GONE);
+        }
 
         return listItemView;
     }
